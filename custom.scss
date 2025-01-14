@@ -1,0 +1,39 @@
+/*-- scss:defaults --*/
+$primary-color: #2A4D69 ;
+$secondary-color: #4B86B4 ;
+$tertiary-color: lighten($secondary-color, 15%);
+$accent-color: #F29E4C ;
+$theme-white: #fff;
+$theme-black: #000;
+$font-family-sans-serif: "Poppins" ;
+
+
+$presentation-heading-color: #4B86B4;
+$body-color: $primary-color;
+$link-color: $secondary-color; 
+$selected-text-color: $secondary-color;
+$code-color: $accent-color;
+$code-block-bg: $theme-white;
+
+$presentation-font-size-root: 25px; 
+$presentation-h1-font-size: 1.6em;
+$presentation-h2-font-size: 1.6em;
+$body-bg: #ffffff;
+$presentation-title-slide-text-align: left;
+
+
+
+/*-- scss:rules --*/
+
+.footer {
+  p {
+    color: $secondary-color;
+  }
+  a {
+    color: lighten($link-color, 15%);
+  }
+  a:hover {
+    color: lighten($link-color, 25%);
+  }
+}
+

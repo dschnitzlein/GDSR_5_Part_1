@@ -1,0 +1,191 @@
+---
+title: "Teil V - Data Handling und Tabellen"
+subtitle: "Grundlagen der Datenanalyse und Statistik mit R | WS 2024/25"
+author: "Prof. Dr. Daniel D. Schnitzlein"
+footer: "GitHub-Repo: <https://github.com/dschnitzlein/GDSR_5_Part_1/>"
+engine: knitr
+format: 
+  live-revealjs:
+    theme: [default, custom.scss]
+    progress: true
+    slide-number: true
+    width: 1400
+    resources: 
+      - data
+    title-slide-attributes:
+      data-background-color: "#2A4D69"
+      data-background-image: "/images/logo.png"
+      data-background-size: "30%"
+      data-background-position: "center right 20px"
+css: custom.css
+editor: visual
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Dritter Teil von letzter Woche
+
+# 3. Einlesen und Bereinigen von Daten
+
+## Das Menü
+
+<br>
+
+-   Die meisten Datensätze können interkativ über das Menü in R-Studio eingelesen werden.
+
+-   Dabei wird auch der entsprechende R-Code generiert, den Sie dann in Ihr Skript übernehmen können.
+
+-   Aufgrund der einfachen Bedienung und der komfortablen Vorschau-Funktion ist es empfehlenswert diesen Weg für das erste Mal des Einlesens eines Datensatzes zu wählen.
+
+-   Natürlich können alle Datensätze auch über ein Skript eingelesen werden.
+
+-   Bei spezielleren Datensätzen ist dieser Weg zu bevorzugen.
+
+-   Wir beschränken uns hier im Kurs auf "Rechtecksdaten" in den Formaten \*.csv und \*.xls bzw. \*.xlsx
+
+## CSV-Datensätze (1)
+
+<br>
+
+```{webr}
+library(tidyverse)
+students <- read_csv("data/students.csv")
+```
+
+alternativ
+
+```{webr}
+students_web <- read_csv("https://pos.it/r4ds-students-csv")
+```
+
+## Clean-up missing values
+
+<br>
+
+```{webr}
+students <- read_csv("data/students.csv")
+```
+
+alternativ
+
+```{webr}
+students <- read_csv("data/students.csv", na=c("N/A", ""))
+```
+
+## Einheitliche Namen der Variablen
+
+<br>
+
+```{webr}
+install.packages("janitor")
+library(janitor)
+
+students <- students |> 
+    clean_names()
+
+```
+
+## Variablentypen zuweisen
+
+<br>
+
+DIe Variable `meal_plan` ist eine kategoriale Variable die in R als Faktor angelegt sein sollte. Nur so kann R später für Modellierung etc. die Variablen korrekt verwenden.
+
+```{webr}
+
+students <- students |>
+  mutate(meal_plan = factor(meal_plan))
+  
+students
+
+```
+
+## Variablen bereinigen
+
+<br>
+
+DIe Variable `age` enthält aktuell Zahlen und Strings. Das wollen wir bereinigen.
+
+```{webr}
+
+students <- students |>
+  mutate(
+    age = parse_number(if_else(age == "five", "5", age))
+  )
+  
+students
+
+```
+
+<br>
+
+Weitere Informationen und Optionen zum Umgang mit CSV-Files finden Sie unter `?read_csv`.
+
+## Excel-Daten
+
+<br>
+
+-   Microsoft Excel ist wahrscheinlich das meistgenutze Tabellenkalkulationsprogramm und wahrscheinlich auch das meistgenutze Programm zur (oberflächlichen) Datenanalyse.
+
+-   Die Excel-Datenformate sind daher auch häufig genutze Output-Formate für Datengenerierungen und Datenweitergaben (speziell in Unternehmen).
+
+-   R kann Excel-Daten u.a. über das Paket `readxl` lesen und via `writexl` schreiben. Die zugehörige Funktion ist `read_excel()`.
+
+-   Anmerkung: R kann auch mit Stata, SPSS, SAS o.ä. Daten umgehen z.B. via des Pakets `haven`.
+
+## Excel-Daten einlesen (1)
+
+<br>
+
+```{webr}
+library(readxl)
+
+students <- read_excel("data/students.xlsx")
+
+```
+
+## Excel-Daten einlesen (2)
+
+<br>
+
+```{webr}
+
+students <- read_excel("data/students.xlsx",
+  col_names = c("student_id", "full_name", "favourite_food", "meal_plan", "age"),
+  skip = 1
+)
+
+```
+
+## Excel-Daten aus Dateien mit mehreren Tabellenblättern einlesen
+
+<br>
+
+```{webr}
+
+penguins_torgersen <- read_excel("data/penguins.xlsx", sheet = "Torgersen Island", na = "NA")
+penguins_biscoe <- read_excel("data/penguins.xlsx", sheet = "Biscoe Island", na = "NA")
+penguins_dream  <- read_excel("data/penguins.xlsx", sheet = "Dream Island", na = "NA")
+```
+
+## Daten zu einem Datensatz zusammenfügen
+
+<br>
+
+```{webr}
+penguins <- bind_rows(penguins_torgersen, penguins_biscoe, penguins_dream)
+penguins
+```
+
+## Unsere Themenliste
+
+<br>
+
+1.  Einführung in R und R-Studio: Überblick über die Installations- und Einrichtungsprozesse \| Grundlegende Funktionen und Bedienung von R und RStudio
+2.  Grundlagen der Statistiksprache R: Syntax und Datenstrukturen in R \| Einführung in Funktionen und Pakete
+3.  Datenmanagement in R: Methoden der Datenorganisation und -vorbereitung \| Importieren, Bereinigen und Transformieren von Datensätzen
+4.  Einführung in die Pakete des tidyverse: Überblick über die wichtigsten tidyverse-Pakete wie z.B. dplyr und ggplot2 \| Anwendung dieser Pakete zur effizienten Datenanalyse und -visualisierung
+5.  Deskriptive Statistik in R: Berechnung und Interpretation grundlegender statistischer Kennzahlen \| Anwendung von deskriptiven Methoden zur Datenexploration \| Einführung in die statistische Modellierung am Beispiel linearer Modelle
+6.  Datenvisualisierung in R: Erstellen von publikationsreifen Grafiken und Diagrammen mit ggplot2 \| Gestaltung und Interpretation von Datenvisualisierungen zur Unterstützung der Datenanalyse
+
+Noch offen: Einheitliche und publikationsreife Tabellen (nächste Woche).

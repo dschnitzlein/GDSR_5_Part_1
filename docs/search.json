@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "GDSR_5_Part_1.html#das-menü",
+    "href": "GDSR_5_Part_1.html#das-menü",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Das Menü",
+    "text": "Das Menü\n\n\nDie meisten Datensätze können interkativ über das Menü in R-Studio eingelesen werden.\nDabei wird auch der entsprechende R-Code generiert, den Sie dann in Ihr Skript übernehmen können.\nAufgrund der einfachen Bedienung und der komfortablen Vorschau-Funktion ist es empfehlenswert diesen Weg für das erste Mal des Einlesens eines Datensatzes zu wählen.\nNatürlich können alle Datensätze auch über ein Skript eingelesen werden.\nBei spezielleren Datensätzen ist dieser Weg zu bevorzugen.\nWir beschränken uns hier im Kurs auf “Rechtecksdaten” in den Formaten *.csv und *.xls bzw. *.xlsx"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#csv-datensätze-1",
+    "href": "GDSR_5_Part_1.html#csv-datensätze-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "CSV-Datensätze (1)",
+    "text": "CSV-Datensätze (1)\n\n\n\n\n\n\n\n\n\nalternativ"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#clean-up-missing-values",
+    "href": "GDSR_5_Part_1.html#clean-up-missing-values",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Clean-up missing values",
+    "text": "Clean-up missing values\n\n\n\n\n\n\n\n\n\nalternativ"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#einheitliche-namen-der-variablen",
+    "href": "GDSR_5_Part_1.html#einheitliche-namen-der-variablen",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Einheitliche Namen der Variablen",
+    "text": "Einheitliche Namen der Variablen"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#variablentypen-zuweisen",
+    "href": "GDSR_5_Part_1.html#variablentypen-zuweisen",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Variablentypen zuweisen",
+    "text": "Variablentypen zuweisen\n\nDIe Variable meal_plan ist eine kategoriale Variable die in R als Faktor angelegt sein sollte. Nur so kann R später für Modellierung etc. die Variablen korrekt verwenden."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#variablen-bereinigen",
+    "href": "GDSR_5_Part_1.html#variablen-bereinigen",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Variablen bereinigen",
+    "text": "Variablen bereinigen\n\nDIe Variable age enthält aktuell Zahlen und Strings. Das wollen wir bereinigen.\n\n\n\n\n\n\n\n\n\nWeitere Informationen und Optionen zum Umgang mit CSV-Files finden Sie unter ?read_csv."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#excel-daten",
+    "href": "GDSR_5_Part_1.html#excel-daten",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Excel-Daten",
+    "text": "Excel-Daten\n\n\nMicrosoft Excel ist wahrscheinlich das meistgenutze Tabellenkalkulationsprogramm und wahrscheinlich auch das meistgenutze Programm zur (oberflächlichen) Datenanalyse.\nDie Excel-Datenformate sind daher auch häufig genutze Output-Formate für Datengenerierungen und Datenweitergaben (speziell in Unternehmen).\nR kann Excel-Daten u.a. über das Paket readxl lesen und via writexl schreiben. Die zugehörige Funktion ist read_excel().\nAnmerkung: R kann auch mit Stata, SPSS, SAS o.ä. Daten umgehen z.B. via des Pakets haven."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#excel-daten-einlesen-1",
+    "href": "GDSR_5_Part_1.html#excel-daten-einlesen-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Excel-Daten einlesen (1)",
+    "text": "Excel-Daten einlesen (1)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#excel-daten-einlesen-2",
+    "href": "GDSR_5_Part_1.html#excel-daten-einlesen-2",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Excel-Daten einlesen (2)",
+    "text": "Excel-Daten einlesen (2)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#excel-daten-aus-dateien-mit-mehreren-tabellenblättern-einlesen",
+    "href": "GDSR_5_Part_1.html#excel-daten-aus-dateien-mit-mehreren-tabellenblättern-einlesen",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Excel-Daten aus Dateien mit mehreren Tabellenblättern einlesen",
+    "text": "Excel-Daten aus Dateien mit mehreren Tabellenblättern einlesen"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#daten-zu-einem-datensatz-zusammenfügen",
+    "href": "GDSR_5_Part_1.html#daten-zu-einem-datensatz-zusammenfügen",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Daten zu einem Datensatz zusammenfügen",
+    "text": "Daten zu einem Datensatz zusammenfügen"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#unsere-themenliste",
+    "href": "GDSR_5_Part_1.html#unsere-themenliste",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Unsere Themenliste",
+    "text": "Unsere Themenliste\n\n\nEinführung in R und R-Studio: Überblick über die Installations- und Einrichtungsprozesse | Grundlegende Funktionen und Bedienung von R und RStudio\nGrundlagen der Statistiksprache R: Syntax und Datenstrukturen in R | Einführung in Funktionen und Pakete\nDatenmanagement in R: Methoden der Datenorganisation und -vorbereitung | Importieren, Bereinigen und Transformieren von Datensätzen\nEinführung in die Pakete des tidyverse: Überblick über die wichtigsten tidyverse-Pakete wie z.B. dplyr und ggplot2 | Anwendung dieser Pakete zur effizienten Datenanalyse und -visualisierung\nDeskriptive Statistik in R: Berechnung und Interpretation grundlegender statistischer Kennzahlen | Anwendung von deskriptiven Methoden zur Datenexploration | Einführung in die statistische Modellierung am Beispiel linearer Modelle\nDatenvisualisierung in R: Erstellen von publikationsreifen Grafiken und Diagrammen mit ggplot2 | Gestaltung und Interpretation von Datenvisualisierungen zur Unterstützung der Datenanalyse\n\nNoch offen: Einheitliche und publikationsreife Tabellen (nächste Woche).\n\n\n\nGitHub-Repo: https://github.com/dschnitzlein/GDSR_5_Part_1/"
+  }
+]
