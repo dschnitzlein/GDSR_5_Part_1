@@ -52,10 +52,8 @@ library(tidyverse)
 students <- read_csv("data/students.csv")
 ```
 
-alternativ
-
 ```{webr}
-students_web <- read_csv("https://pos.it/r4ds-students-csv")
+students
 ```
 
 ## Clean-up missing values
