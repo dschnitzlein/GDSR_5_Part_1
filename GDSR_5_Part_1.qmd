@@ -35,7 +35,7 @@ editor: visual
 
 -   Dabei wird auch der entsprechende R-Code generiert, den Sie dann in Ihr Skript übernehmen können.
 
--   Aufgrund der einfachen Bedienung und der komfortablen Vorschau-Funktion ist es empfehlenswert diesen Weg für das erste Mal des Einlesens eines Datensatzes zu wählen.
+-   Aufgrund der einfachen Bedienung und der komfortablen Vorschau-Funktion ist es empfehlenswert diesen Weg – mindestens – für das erste Mal des Einlesens eines Datensatzes zu wählen.
 
 -   Natürlich können alle Datensätze auch über ein Skript eingelesen werden.
 
@@ -51,6 +51,8 @@ editor: visual
 library(tidyverse)
 students <- read_csv("data/students.csv")
 ```
+
+<br>
 
 ```{webr}
 students
@@ -125,11 +127,15 @@ Weitere Informationen und Optionen zum Umgang mit CSV-Files finden Sie unter `?r
 
 -   Microsoft Excel ist wahrscheinlich das meistgenutze Tabellenkalkulationsprogramm und wahrscheinlich auch das meistgenutze Programm zur (oberflächlichen) Datenanalyse.
 
--   Die Excel-Datenformate sind daher auch häufig genutze Output-Formate für Datengenerierungen und Datenweitergaben (speziell in Unternehmen).
+-   Die Excel-Datenformate sind daher auch häufig genutze **Output-Formate** für Datengenerierungen und Datenweitergaben (speziell in Unternehmen).
+
+    <br>
 
 -   R kann Excel-Daten u.a. über das Paket `readxl` lesen und via `writexl` schreiben. Die zugehörige Funktion ist `read_excel()`.
 
--   Anmerkung: R kann auch mit Stata, SPSS, SAS o.ä. Daten umgehen z.B. via des Pakets `haven`.
+-   R kann auch mit Stata, SPSS, SAS o.ä. Daten umgehen z.B. via des Pakets `haven`.
+
+-   Speziell auf die Arbeit mit gelabelten Daten spezialisiert ist das Paket `sjlabelled` : <https://cran.r-project.org/web/packages/sjlabelled/index.html>
 
 ## Excel-Daten einlesen (1)
 
@@ -179,11 +185,240 @@ penguins
 
 <br>
 
-1.  Einführung in R und R-Studio: Überblick über die Installations- und Einrichtungsprozesse \| Grundlegende Funktionen und Bedienung von R und RStudio
-2.  Grundlagen der Statistiksprache R: Syntax und Datenstrukturen in R \| Einführung in Funktionen und Pakete
-3.  Datenmanagement in R: Methoden der Datenorganisation und -vorbereitung \| Importieren, Bereinigen und Transformieren von Datensätzen
-4.  Einführung in die Pakete des tidyverse: Überblick über die wichtigsten tidyverse-Pakete wie z.B. dplyr und ggplot2 \| Anwendung dieser Pakete zur effizienten Datenanalyse und -visualisierung
-5.  Deskriptive Statistik in R: Berechnung und Interpretation grundlegender statistischer Kennzahlen \| Anwendung von deskriptiven Methoden zur Datenexploration \| Einführung in die statistische Modellierung am Beispiel linearer Modelle
-6.  Datenvisualisierung in R: Erstellen von publikationsreifen Grafiken und Diagrammen mit ggplot2 \| Gestaltung und Interpretation von Datenvisualisierungen zur Unterstützung der Datenanalyse
+::: incremental
+1.  **Einführung in R und R-Studio:** [Überblick über die Installations- und Einrichtungsprozesse \| Grundlegende Funktionen und Bedienung von R und RStudio]{style="color:green"}
+2.  **Grundlagen der Statistiksprache R:** [Syntax und Datenstrukturen in R \| Einführung in Funktionen und Pakete]{style="color:green"}
+3.  **Datenmanagement in R**: [Methoden der Datenorganisation und -vorbereitung \| Importieren, Bereinigen und Transformieren von Datensätzen]{style="color:green"}
+4.  **Einführung in die Pakete des tidyverse:** [Überblick über die wichtigsten tidyverse-Pakete wie z.B. dplyr und ggplot2 \| Anwendung dieser Pakete zur effizienten Datenanalyse und -visualisierung]{style="color:green"}
+5.  **Deskriptive Statistik in R:** [Berechnung und Interpretation grundlegender statistischer Kennzahlen \| Anwendung von deskriptiven Methoden zur Datenexploration \| Einführung in die statistische Modellierung am Beispiel linearer Modelle]{style="color:green"}
+6.  **Datenvisualisierung in R:** [Erstellen von publikationsreifen Grafiken und Diagrammen mit ggplot2 \| Gestaltung und Interpretation von Datenvisualisierungen zur Unterstützung der Datenanalyse]{style="color:green"}
+:::
 
-Noch offen: Einheitliche und publikationsreife Tabellen (nächste Woche).
+. . .
+
+Noch offen: Einheitliche und publikationsreife Tabellen.
+
+# Tabellen
+
+## Verwendungszwecke von Tabellen (ähnlich zu Abbildungen)
+
+<br>
+
+::: {.fragment .custom .blur}
+[**Use-case 1.**]{style="color:#F29E4C"} Im Datenanalyseprozess benötigen wir Tabellen um Ergebnisse zu organisieren, einen aggregierten Überblick über die Daten zu bekommen, Ergebnisse -- *auf der Arbeitsebene* -- zu diskutieren.
+
+Für diesen Fall ist es sinnvoll auf eingebaute Tabellenfunktionen zurückzugreifen bzw. die entsprechenden R-Funktionen zu nutzen (z.B. `table()`). Gemeinsames Merkmal dieser Funktionen ist, dass die erzeugten Tabellen bevorzugt `in der Konsole` (manchmal im Viewer) `angezeigt werden`.
+:::
+
+::: {.fragment .custom .blur}
+[**Use-case 2.**]{style="color:#F29E4C"} Am Ende des Datenanalyseprozess benötigen wir Tabellen um die Ergebnisse -- *nach extern* -- zu kommunizieren. Für diesen Fall steht in R mit dem `gt()`-Paket eine Lösung zur Verfügung, die nach ähnlicher Logik wie `ggplot2` eine Erstellung druckreifer Tabellen ermöglicht. Gemeinsames Merkmal hier ist, dass die erzeugten Tabellen bevorzugt `in eigenen Dokumenten` (Word, LaTeX, HTML etc.) `verwendet werden`.
+:::
+
+<br>
+
+::: {.fragment .custom .blur}
+**Anmerkung:** Im Fall von Abbildungen entspricht *Use-case 1* der Verwendung von `plot()` und *Use-case 2* der Verwendung von `ggplot2`.
+:::
+
+# Use-case 1. Arbeitsebene
+
+## Deskriptive Statistiken
+
+<br>
+
+```{webr}
+summary(penguins)
+```
+
+alternativ
+
+```{webr}
+library(psych)
+describe(penguins)
+```
+
+alternativ
+
+```{webr}
+library(stargazer)
+stargazer(as.data.frame(penguins), type= "text", title="Descriptive statistics", digits=1)
+```
+
+viele weitere Möglichkeiten: z.B. die [easystats-Pakete](https://easystats.github.io/easystats/) .
+
+## Regressionen (1)
+
+<br>
+
+```{webr}
+penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g) |> 
+  summary()
+```
+
+## Regressionen (2)
+
+<br>
+
+```{webr}
+model2 <- penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g + bill_length_mm)
+
+model3 <- penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g + bill_length_mm + bill_depth_mm)
+
+stargazer(model1, model2, model3, type="text")
+```
+
+# Use-case 2. Publikationsreife Tabellen
+
+## Das `gt()`-Paket und `gtsummary()`
+
+<br>
+
+|                                 |                                        |
+|---------------------------------|----------------------------------------|
+| ![](images/gt.png){width="400"} | ![](images/gtsummary.png){width="461"} |
+
+-   Erste Versionen von `gt()` und `gtsummary()` sind ab 2019 auf github erschienen und seit Version 0.2 auch auf `CRAN` verfügbar.
+
+-   Ziel von `gt()` ist es eine *grammar of tables* ähnlich zu `ggplot2` zu definieren.
+
+# `gtsummary()`
+
+## Anwendung (1)
+
+<br>
+
+```{webr}
+install.packages("gt")
+install.packages("gtsummary")
+
+library(gt)
+library(gtsummary)
+
+penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g) |> 
+  tbl_regression()  |> 
+  bold_p(t = 0.10) |> 
+  add_glance_table(include = c(nobs, r.squared))
+```
+
+## Anwendung (2)
+
+<br>
+
+```{webr}
+model1 <- penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g) |> 
+  tbl_regression()  |> 
+  bold_p(t = 0.10) |> 
+  add_glance_table(include = c(nobs, r.squared))
+
+model2 <- penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g + bill_length_mm) |> 
+  tbl_regression()  |> 
+  bold_p(t = 0.10) |> 
+  add_glance_table(include = c(nobs, r.squared))
+
+model3 <- penguins |>
+  lm(formula = flipper_length_mm ~ body_mass_g + bill_length_mm + bill_depth_mm) |> 
+  tbl_regression()  |> 
+  bold_p(t = 0.10) |> 
+  add_glance_table(include = c(nobs, r.squared))
+```
+
+## Anwendung (3)
+
+```{webr}
+tbl_merge(
+  tbls = list(model1, model2, model3),
+  tab_spanner = c("Model 1", "Model 2", "Model 3")) |>
+  modify_table_body(~.x %>% arrange(row_type == "glance_statistic"))
+```
+
+![](images/Tab1.png){fig-align="center" width="900"}
+
+-   Mit der Funktion `as_gt()` kann ein `gtsummary` Objekt in ein `gt()`-Objekt umgewandelt werden und als normale `gt()`-Tabelle bearbeitet werden.
+
+# `gt()`
+
+## Elemente einer `gt()` - Tabelle
+
+![](images/gt_parts.png){fig-align="center"}
+
+## Anwendung (1)
+
+```{webr}
+library(tidyverse)
+library(gt)
+library(gtExtras)
+library(readxl)
+
+Spotify_Top_10_GER_2025_01_15 <- read_excel("Spotify_Top_10_GER_2025-01-15.xlsx", 
+                                            col_types = c("numeric",
+                                                          "text", 
+                                                          "text", 
+                                                          "numeric", 
+                                                          "date"))
+```
+
+```{webr}
+Spotify <- Spotify_Top_10_GER_2025_01_15 |>
+  rename(Dauer_alt = Dauer) |> 
+  mutate(minutes = minute(Dauer_alt),
+         seconds = second(Dauer_alt),
+         Dauer = minutes*60 + seconds) |> 
+  select(-c(Dauer_alt))
+```
+
+## Anwendung (2)
+
+```{webr}
+Spotify |> 
+  select(-c("minutes", "seconds")) |> 
+  gt() |> 
+  cols_label(Kuenstler_erster="Erste(r) Interpret(in)",
+             Wiedergaben = "Anzahl Wiedergaben") |> 
+  tab_style(
+    style = "font-weight: bold",
+    locations = cells_column_labels()
+  ) |> 
+  cols_align(align = "left",
+             columns = c("Rang")) |> 
+  gt_plt_bar(column = Wiedergaben, color="#F29E4C", scale_type = "number", width=50) |> 
+  fmt_duration(
+    columns = c("Dauer"),
+    input_units = "seconds",
+    output_units = c("minutes", "seconds"),
+    duration_style = c("colon-sep"),
+    use_seps = TRUE,
+    sep_mark = ","
+  ) |>
+  tab_header(
+    title = md("**Top 10 Songs auf Spotify in Deutschland**"),
+    subtitle = "14. Januar 2024"
+  ) |> 
+  tab_source_note(source_note = md(
+    "Note: Die Tabelle zeigt die 10 meistgespielten Songs auf Spotify am 14. Januar 2025. Datenabruf am 15. Januar 2025. <br> Quelle: Spotify.")) |> 
+  opt_stylize(style=3) |> 
+  gtsave_extra("Spotify_Table.png", vwidth=850, vheight=570, zoom=4)
+```
+
+## Anwendung (3)
+
+<br>
+
+![](images/Spotify_Table.png){fig-align="center"}
+
+## Wo geht's weiter?
+
+<br>
+
+-   Introduction to creating `gt()`-Tables: <https://gt.rstudio.com/articles/gt.html>
+
+-   Overview and tutorials on `gtsummary`: <https://www.danieldsjoberg.com/gtsummary/index.html>
+
+-   Create your own table theme with the `gt()`-Package Video and Blog: <https://rfortherestofus.com/2023/08/table-theme-gt>
+
+# Viel Erfolg bei Ihren Analysen!!

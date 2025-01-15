@@ -4,7 +4,7 @@
     "href": "GDSR_5_Part_1.html#das-menü",
     "title": "Teil V - Data Handling und Tabellen",
     "section": "Das Menü",
-    "text": "Das Menü\n\n\nDie meisten Datensätze können interkativ über das Menü in R-Studio eingelesen werden.\nDabei wird auch der entsprechende R-Code generiert, den Sie dann in Ihr Skript übernehmen können.\nAufgrund der einfachen Bedienung und der komfortablen Vorschau-Funktion ist es empfehlenswert diesen Weg für das erste Mal des Einlesens eines Datensatzes zu wählen.\nNatürlich können alle Datensätze auch über ein Skript eingelesen werden.\nBei spezielleren Datensätzen ist dieser Weg zu bevorzugen.\nWir beschränken uns hier im Kurs auf “Rechtecksdaten” in den Formaten *.csv und *.xls bzw. *.xlsx"
+    "text": "Das Menü\n\n\nDie meisten Datensätze können interkativ über das Menü in R-Studio eingelesen werden.\nDabei wird auch der entsprechende R-Code generiert, den Sie dann in Ihr Skript übernehmen können.\nAufgrund der einfachen Bedienung und der komfortablen Vorschau-Funktion ist es empfehlenswert diesen Weg – mindestens – für das erste Mal des Einlesens eines Datensatzes zu wählen.\nNatürlich können alle Datensätze auch über ein Skript eingelesen werden.\nBei spezielleren Datensätzen ist dieser Weg zu bevorzugen.\nWir beschränken uns hier im Kurs auf “Rechtecksdaten” in den Formaten *.csv und *.xls bzw. *.xlsx"
   },
   {
     "objectID": "GDSR_5_Part_1.html#csv-datensätze-1",
@@ -46,7 +46,7 @@
     "href": "GDSR_5_Part_1.html#excel-daten",
     "title": "Teil V - Data Handling und Tabellen",
     "section": "Excel-Daten",
-    "text": "Excel-Daten\n\n\nMicrosoft Excel ist wahrscheinlich das meistgenutze Tabellenkalkulationsprogramm und wahrscheinlich auch das meistgenutze Programm zur (oberflächlichen) Datenanalyse.\nDie Excel-Datenformate sind daher auch häufig genutze Output-Formate für Datengenerierungen und Datenweitergaben (speziell in Unternehmen).\nR kann Excel-Daten u.a. über das Paket readxl lesen und via writexl schreiben. Die zugehörige Funktion ist read_excel().\nAnmerkung: R kann auch mit Stata, SPSS, SAS o.ä. Daten umgehen z.B. via des Pakets haven."
+    "text": "Excel-Daten\n\n\nMicrosoft Excel ist wahrscheinlich das meistgenutze Tabellenkalkulationsprogramm und wahrscheinlich auch das meistgenutze Programm zur (oberflächlichen) Datenanalyse.\nDie Excel-Datenformate sind daher auch häufig genutze Output-Formate für Datengenerierungen und Datenweitergaben (speziell in Unternehmen).\n\nR kann Excel-Daten u.a. über das Paket readxl lesen und via writexl schreiben. Die zugehörige Funktion ist read_excel().\nR kann auch mit Stata, SPSS, SAS o.ä. Daten umgehen z.B. via des Pakets haven.\nSpeziell auf die Arbeit mit gelabelten Daten spezialisiert ist das Paket sjlabelled : https://cran.r-project.org/web/packages/sjlabelled/index.html"
   },
   {
     "objectID": "GDSR_5_Part_1.html#excel-daten-einlesen-1",
@@ -81,6 +81,97 @@
     "href": "GDSR_5_Part_1.html#unsere-themenliste",
     "title": "Teil V - Data Handling und Tabellen",
     "section": "Unsere Themenliste",
-    "text": "Unsere Themenliste\n\n\nEinführung in R und R-Studio: Überblick über die Installations- und Einrichtungsprozesse | Grundlegende Funktionen und Bedienung von R und RStudio\nGrundlagen der Statistiksprache R: Syntax und Datenstrukturen in R | Einführung in Funktionen und Pakete\nDatenmanagement in R: Methoden der Datenorganisation und -vorbereitung | Importieren, Bereinigen und Transformieren von Datensätzen\nEinführung in die Pakete des tidyverse: Überblick über die wichtigsten tidyverse-Pakete wie z.B. dplyr und ggplot2 | Anwendung dieser Pakete zur effizienten Datenanalyse und -visualisierung\nDeskriptive Statistik in R: Berechnung und Interpretation grundlegender statistischer Kennzahlen | Anwendung von deskriptiven Methoden zur Datenexploration | Einführung in die statistische Modellierung am Beispiel linearer Modelle\nDatenvisualisierung in R: Erstellen von publikationsreifen Grafiken und Diagrammen mit ggplot2 | Gestaltung und Interpretation von Datenvisualisierungen zur Unterstützung der Datenanalyse\n\nNoch offen: Einheitliche und publikationsreife Tabellen (nächste Woche).\n\n\n\nGitHub-Repo: https://github.com/dschnitzlein/GDSR_5_Part_1/"
+    "text": "Unsere Themenliste\n\n\n\nEinführung in R und R-Studio: Überblick über die Installations- und Einrichtungsprozesse | Grundlegende Funktionen und Bedienung von R und RStudio\nGrundlagen der Statistiksprache R: Syntax und Datenstrukturen in R | Einführung in Funktionen und Pakete\nDatenmanagement in R: Methoden der Datenorganisation und -vorbereitung | Importieren, Bereinigen und Transformieren von Datensätzen\nEinführung in die Pakete des tidyverse: Überblick über die wichtigsten tidyverse-Pakete wie z.B. dplyr und ggplot2 | Anwendung dieser Pakete zur effizienten Datenanalyse und -visualisierung\nDeskriptive Statistik in R: Berechnung und Interpretation grundlegender statistischer Kennzahlen | Anwendung von deskriptiven Methoden zur Datenexploration | Einführung in die statistische Modellierung am Beispiel linearer Modelle\nDatenvisualisierung in R: Erstellen von publikationsreifen Grafiken und Diagrammen mit ggplot2 | Gestaltung und Interpretation von Datenvisualisierungen zur Unterstützung der Datenanalyse\n\n\n\nNoch offen: Einheitliche und publikationsreife Tabellen."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#verwendungszwecke-von-tabellen-ähnlich-zu-abbildungen",
+    "href": "GDSR_5_Part_1.html#verwendungszwecke-von-tabellen-ähnlich-zu-abbildungen",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Verwendungszwecke von Tabellen (ähnlich zu Abbildungen)",
+    "text": "Verwendungszwecke von Tabellen (ähnlich zu Abbildungen)\n\n\nUse-case 1. Im Datenanalyseprozess benötigen wir Tabellen um Ergebnisse zu organisieren, einen aggregierten Überblick über die Daten zu bekommen, Ergebnisse – auf der Arbeitsebene – zu diskutieren.\nFür diesen Fall ist es sinnvoll auf eingebaute Tabellenfunktionen zurückzugreifen bzw. die entsprechenden R-Funktionen zu nutzen (z.B. table()). Gemeinsames Merkmal dieser Funktionen ist, dass die erzeugten Tabellen bevorzugt in der Konsole (manchmal im Viewer) angezeigt werden.\n\n\nUse-case 2. Am Ende des Datenanalyseprozess benötigen wir Tabellen um die Ergebnisse – nach extern – zu kommunizieren. Für diesen Fall steht in R mit dem gt()-Paket eine Lösung zur Verfügung, die nach ähnlicher Logik wie ggplot2 eine Erstellung druckreifer Tabellen ermöglicht. Gemeinsames Merkmal hier ist, dass die erzeugten Tabellen bevorzugt in eigenen Dokumenten (Word, LaTeX, HTML etc.) verwendet werden.\n\n\n\nAnmerkung: Im Fall von Abbildungen entspricht Use-case 1 der Verwendung von plot() und Use-case 2 der Verwendung von ggplot2."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#deskriptive-statistiken",
+    "href": "GDSR_5_Part_1.html#deskriptive-statistiken",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Deskriptive Statistiken",
+    "text": "Deskriptive Statistiken\n\n\n\n\n\n\n\n\n\nalternativ\n\n\n\n\n\n\n\n\nalternativ\n\n\n\n\n\n\n\n\nviele weitere Möglichkeiten: z.B. die easystats-Pakete ."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#regressionen-1",
+    "href": "GDSR_5_Part_1.html#regressionen-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Regressionen (1)",
+    "text": "Regressionen (1)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#regressionen-2",
+    "href": "GDSR_5_Part_1.html#regressionen-2",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Regressionen (2)",
+    "text": "Regressionen (2)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#das-gt-paket-und-gtsummary",
+    "href": "GDSR_5_Part_1.html#das-gt-paket-und-gtsummary",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Das gt()-Paket und gtsummary()",
+    "text": "Das gt()-Paket und gtsummary()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nErste Versionen von gt() und gtsummary() sind ab 2019 auf github erschienen und seit Version 0.2 auch auf CRAN verfügbar.\nZiel von gt() ist es eine grammar of tables ähnlich zu ggplot2 zu definieren."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#anwendung-1",
+    "href": "GDSR_5_Part_1.html#anwendung-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Anwendung (1)",
+    "text": "Anwendung (1)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#anwendung-2",
+    "href": "GDSR_5_Part_1.html#anwendung-2",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Anwendung (2)",
+    "text": "Anwendung (2)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#anwendung-3",
+    "href": "GDSR_5_Part_1.html#anwendung-3",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Anwendung (3)",
+    "text": "Anwendung (3)\n\n\n\n\n\n\n\n\n\n\nMit der Funktion as_gt() kann ein gtsummary Objekt in ein gt()-Objekt umgewandelt werden und als normale gt()-Tabelle bearbeitet werden."
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#elemente-einer-gt---tabelle",
+    "href": "GDSR_5_Part_1.html#elemente-einer-gt---tabelle",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Elemente einer gt() - Tabelle",
+    "text": "Elemente einer gt() - Tabelle"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#anwendung-1-1",
+    "href": "GDSR_5_Part_1.html#anwendung-1-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Anwendung (1)",
+    "text": "Anwendung (1)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#anwendung-2-1",
+    "href": "GDSR_5_Part_1.html#anwendung-2-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Anwendung (2)",
+    "text": "Anwendung (2)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#anwendung-3-1",
+    "href": "GDSR_5_Part_1.html#anwendung-3-1",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Anwendung (3)",
+    "text": "Anwendung (3)"
+  },
+  {
+    "objectID": "GDSR_5_Part_1.html#wo-gehts-weiter",
+    "href": "GDSR_5_Part_1.html#wo-gehts-weiter",
+    "title": "Teil V - Data Handling und Tabellen",
+    "section": "Wo geht’s weiter?",
+    "text": "Wo geht’s weiter?\n\n\nIntroduction to creating gt()-Tables: https://gt.rstudio.com/articles/gt.html\nOverview and tutorials on gtsummary: https://www.danieldsjoberg.com/gtsummary/index.html\nCreate your own table theme with the gt()-Package Video and Blog: https://rfortherestofus.com/2023/08/table-theme-gt"
   }
 ]
