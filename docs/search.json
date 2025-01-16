@@ -172,6 +172,6 @@
     "href": "GDSR_5_Part_1.html#wo-gehts-weiter",
     "title": "Teil V - Data Handling und Tabellen",
     "section": "Wo geht’s weiter?",
-    "text": "Wo geht’s weiter?\n\n\nIntroduction to creating gt()-Tables: https://gt.rstudio.com/articles/gt.html\nOverview and tutorials on gtsummary: https://www.danieldsjoberg.com/gtsummary/index.html\nCreate your own table theme with the gt()-Package Video and Blog: https://rfortherestofus.com/2023/08/table-theme-gt"
+    "text": "Wo geht’s weiter?\n\n\nIntroduction to creating gt()-Tables: https://gt.rstudio.com/articles/gt.html\nOverview and tutorials on gtsummary: https://www.danieldsjoberg.com/gtsummary/index.html\nCreate your own table theme with the gt()-Package Video and Blog: https://rfortherestofus.com/2023/08/table-theme-gt\nVollständige Berichte mit R: https://quarto.org\nVorträge auf der posit::conf 2024: Link zur Playlist auf YouTube"
   }
 ]
