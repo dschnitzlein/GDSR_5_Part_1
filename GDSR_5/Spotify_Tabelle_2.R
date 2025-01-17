@@ -88,7 +88,7 @@ Sys.setlocale("LC_TIME", "de_DE") # Damit später im Subtitle Januar und nicht J
 
 for (i in Tage) {
   
-  tabnam <- paste0("Spotify_Table_", as_date(i), ".png")
+tabnam <- paste0("Spotify_Table_", as_date(i), ".png")
   
   Spotify |> 
     filter(Datum == as_date(i)) |> 
@@ -118,4 +118,4 @@ for (i in Tage) {
     tab_source_note(source_note = paste0("Note: Die Tabelle zeigt die 10 meistgespielten Songs auf Spotify am ", format(as_date(i-1), format = "%d. %B %Y"), ". Datenabruf am ", format(as_date(i), format = "%d. %B %Y"), ". \n Quelle: Spotify.")) |> 
     opt_stylize(style=3) |> 
     gtsave_extra(tabnam, vwidth=850, vheight=570, zoom=4)
-  }
+}

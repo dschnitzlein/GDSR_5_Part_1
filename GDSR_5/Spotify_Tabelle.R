@@ -20,13 +20,13 @@ Spotify <- Spotify_Top_10_GER_2025_01_15 |>
 
 Spotify |> 
   select(-c("minutes", "seconds")) |> 
-  gt() |> 
+    gt() |> 
   cols_label(Kuenstler_erster="Erste(r) Interpret(in)",
              Wiedergaben = "Anzahl Wiedergaben") |> 
   tab_style(
     style = "font-weight: bold",
     locations = cells_column_labels()
-  ) |> 
+  )|> 
   cols_align(align = "left",
              columns = c("Rang")) |> 
   gt_plt_bar(column = Wiedergaben, color="#F29E4C", scale_type = "number", width=50) |> 
@@ -44,5 +44,5 @@ Spotify |>
   ) |> 
   tab_source_note(source_note = md(
     "Note: Die Tabelle zeigt die 10 meistgespielten Songs auf Spotify am 14. Januar 2025. Datenabruf am 15. Januar 2025. <br> Quelle: Spotify.")) |> 
-  opt_stylize(style=3) |> 
+  opt_stylize(style=3)|> 
   gtsave_extra("Spotify_Table.png", vwidth=850, vheight=570, zoom=4)
